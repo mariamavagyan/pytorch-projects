@@ -14,7 +14,7 @@ train_dataset = torchvision.datasets.MNIST(root='./mnist/', train=True, transfor
 test_dataset = torchvision.datasets.MNIST(root='./mnist/', train=False, transform=transform, download=False)
 
 # encapsulate them into dataloader form
-train_loader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=False, drop_last=True)
+train_loader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
 test_loader = data.DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False,drop_last=True)
 
 import matplotlib.pyplot as plt
