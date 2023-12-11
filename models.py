@@ -29,10 +29,14 @@ class CNN(nn.Module):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
-        # when using CrossEntropy as loss, output raw x
-        # nn.CrossEntropyLoss()
+        # when using nn.CrossEntropyLoss() as loss, output raw x here.
+
         # when using negative log-likelihood, output softmax(x)
         # F.nll_loss()
+
+        # nn.CrossEntropyLoss() combines nn.LogSoftmax() (that is, log(softmax(x)))
+        # and nn.NLLLoss() in one single class.
+
 
         return x
 
