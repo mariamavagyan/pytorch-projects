@@ -31,6 +31,7 @@ class MNISTDataLoader:
                                             batch_size=self.batch_size,
                                             shuffle=True,
                                             num_workers=self.num_workers)
+        return self.train_loader
         
     def _load_test(self):
 
