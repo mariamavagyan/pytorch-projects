@@ -44,3 +44,6 @@ class MNISTDataLoader:
                                            batch_size=self.batch_size,
                                            shuffle = True,
                                            num_workers=self.num_workers)
+        
+    def _batch_size(self):
+        return self.batch_size

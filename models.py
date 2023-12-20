@@ -2,18 +2,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class CNN(nn.Module):
+class CNN_ours(nn.Module):
     # def __init__(self, *args, **kwargs) -> None:
     #     super().__init__(*args, **kwargs)
 
-    def __init__(self) -> None: # the function returns none
-        super(CNN), self.__init__()
+    def __init__(self):# -> None: # the function returns none
+        super().__init__()
 
         self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
         self.pool = nn.MaxPool2d(2,2) # kernel size and stride
         self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
         self.drop = nn.Dropout2d() # p=0.5 as default probability
-        self.fc1 = nn.Linear(320, 50) # 320 = 20 channels * 4 x 4 channel dim
+        self.fc1 = nn.Linear(20*4*4, 50)
         self.fc2 = nn.Linear(50, 10)
 
     def forward(self, x):
